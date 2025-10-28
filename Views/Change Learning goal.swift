@@ -42,7 +42,7 @@ public struct ChangeLearningGoalView: View {
                     .background(Color.gray.opacity(0.5))
             }
 
-            // MARK: - Duration Buttons (نفس تصميم Onboarding)
+            // MARK: - Duration Buttons 
             VStack(alignment: .leading, spacing: 14) {
                 Text("I want to learn it in a")
                     .font(.system(size: 22, weight: .semibold))

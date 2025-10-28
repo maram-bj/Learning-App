@@ -45,6 +45,26 @@
 			path = "New learningUITests";
 			sourceTree = "<group>";
 		};
+		88D10BD72EB008F700801937 /* Models */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Models;
+			sourceTree = "<group>";
+		};
+		88D10E742EB0902100801937 /* Views */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Views;
+			sourceTree = "<group>";
+		};
+		88D10E7F2EB0902400801937 /* ViewsModel */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = ViewsModel;
+			sourceTree = "<group>";
+		};
+		88D10E8A2EB0902900801937 /* Comonents */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Comonents;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +95,10 @@
 		88D10B8B2EB008E900801937 = {
 			isa = PBXGroup;
 			children = (
+				88D10E8A2EB0902900801937 /* Comonents */,
+				88D10E7F2EB0902400801937 /* ViewsModel */,
+				88D10E742EB0902100801937 /* Views */,
+				88D10BD72EB008F700801937 /* Models */,
 				88D10B962EB008E900801937 /* New learning */,
 				88D10BA42EB008EA00801937 /* New learningTests */,
 				88D10BAE2EB008EA00801937 /* New learningUITests */,
@@ -109,6 +133,10 @@
 			);
 			fileSystemSynchronizedGroups = (
 				88D10B962EB008E900801937 /* New learning */,
+				88D10BD72EB008F700801937 /* Models */,
+				88D10E742EB0902100801937 /* Views */,
+				88D10E7F2EB0902400801937 /* ViewsModel */,
+				88D10E8A2EB0902900801937 /* Comonents */,
 			);
 			name = "New learning";
 			packageProductDependencies = (
@@ -395,6 +423,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = VL9PD9J234;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -426,6 +455,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = VL9PD9J234;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

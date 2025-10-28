@@ -23,43 +23,6 @@ final class ChangeLearningGoalViewModel: ObservableObject {
             self.selectedDuration = currentGoal.duration
         }
     }
-
-//    func updateGoal() {
-//        guard !skillNameInput.trimmingCharacters(in: .whitespaces).isEmpty,
-//              let duration = selectedDuration else { return }
-//
-//        let newGoal = GoalModel(
-//            skillName: skillNameInput.trimmingCharacters(in: .whitespacesAndNewlines),
-//            duration: duration
-//        )
-//
-//        goalManager.setCurrentGoal(newGoal)
-//
-//        goalManager.refreshGoal()
-//
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-//            self.hasChanges = false
-//            self.objectWillChange.send()
-//        }
-//    }
-    
-//    func updateGoal() {
-//        guard !skillNameInput.trimmingCharacters(in: .whitespaces).isEmpty,
-//              let duration = selectedDuration else { return }
-//
-//        let newGoal = GoalModel(
-//            skillName: skillNameInput.trimmingCharacters(in: .whitespacesAndNewlines),
-//            duration: duration
-//        )
-//
-//        goalManager.setCurrentGoal(newGoal)
-//        
-//
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-//            self.hasChanges = false
-//            self.objectWillChange.send()
-//        }
-//    }
     
     func updateGoal() {
         guard !skillNameInput.trimmingCharacters(in: .whitespaces).isEmpty,
@@ -72,7 +35,7 @@ final class ChangeLearningGoalViewModel: ObservableObject {
 
         goalManager.setCurrentGoal(newGoal)
 
-        // 🔔 Notify main screen to reset buttons
+        //  Notify main screen to reset buttons
         NotificationCenter.default.post(name: .goalChanged, object: nil)
 
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {

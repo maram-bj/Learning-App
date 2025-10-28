@@ -26,6 +26,7 @@ public struct MainView: View {
                 VStack(spacing: 22) {
 
                     // MARK: - Calendar Card
+
                     ZStack {
                         RoundedRectangle(cornerRadius: 13)
                             .fill(Color.black.opacity(0.3))
@@ -65,6 +66,7 @@ public struct MainView: View {
                     }
 
                     // MARK: - Sections
+                    // If goal is completed -> show Well Done, otherwise show logging buttons
                     if let goal = goalManager.currentGoal {
                         let progress = GoalProgressModel(goal: goal)
                         if progress.isGoalCompleted || goal.isCompleted {
@@ -76,7 +78,8 @@ public struct MainView: View {
                         logButtonsSectionDisabled
                     }
 
-                    // MARK: - Freezes info ✅
+                    // MARK: - Freezes info
+                    // summarizing used vs total freeze days
                     VStack(spacing: 6) {
                         textregularGray3(
                             title: freezeText(for: goalManager.currentGoal),
@@ -88,6 +91,7 @@ public struct MainView: View {
                 }
 
                 // MARK: - Month Picker Overlay
+                // Appears when user taps month arrow; updates the week calendar
                 if showPicker {
                     Color.black.opacity(0.25)
                         .edgesIgnoringSafeArea(.all)
@@ -157,6 +161,7 @@ public struct MainView: View {
             .toolbarTitleDisplayMode(.inlineLarge)
             .toolbar {
                 ToolbarItem {
+                    // Opens full calendar (all months) screen
                     NavigationLink(destination: CalendarFullView(viewModel: calendarVM)) {
                         Image(systemName: "calendar")
                             .foregroundColor(.white)
@@ -167,6 +172,7 @@ public struct MainView: View {
                 ToolbarSpacer(.fixed)
 
                 ToolbarItem {
+                    // Opens screen to change skill name and duration
                     NavigationLink(destination: ChangeLearningGoalView()) {
                         Image(systemName: "pencil.and.outline")
                             .foregroundColor(.white)
@@ -181,11 +187,11 @@ public struct MainView: View {
             goalManager.setModelContext(modelContext)
             goalManager.loadGoal()
 
-            // 🧼 Reset button states every time view appears
+            // Reset button states every time view appears
             hasLearnedToday = false
             hasFreezedToday = false
         }
-        // 🧼 Reset when user changes goal inside app
+        // Reset when user changes goal inside app
         .onReceive(NotificationCenter.default.publisher(for: .goalChanged)) { _ in
             hasLearnedToday = false
             hasFreezedToday = false
@@ -193,7 +199,7 @@ public struct MainView: View {
         .preferredColorScheme(.dark)
     }
 
-    // MARK: - ✅ Freeze Text
+    // MARK: - Freeze Text
     private func freezeText(for goal: GoalModel?) -> String {
         guard let goal else { return "—" }
         let maxDays = goal.duration.maxFreezeDays()
@@ -202,11 +208,13 @@ public struct MainView: View {
         return "\(used) of \(maxDays) freeze days used"
     }
 
-    // MARK: - Buttons Section (Animated)
+    // MARK: - Buttons Section
+    // Log buttons section: default state vs. after user clicks 
     private var logButtonsSection: some View {
         VStack(spacing: 14) {
 
             // MARK: - Log as Learned
+            // Default: orange circle "Log as Learned". After click: black circle with orange glow "Learned Today"
             Button {
                 mainVM.logAsLearned()
                 withAnimation(.easeInOut(duration: 0.3)) {
@@ -258,6 +266,7 @@ public struct MainView: View {
             .padding(.bottom, 4)
 
             // MARK: - Log as Freezed
+            // Default: cyan pill button. After click: black pill with cyan glow
             Button {
                 mainVM.logAsFreezed()
                 withAnimation(.easeInOut(duration: 0.3)) {
@@ -292,6 +301,7 @@ public struct MainView: View {
     }
 
     // MARK: - Disabled Buttons
+    // Shown when there is no active goal yet
     private var logButtonsSectionDisabled: some View {
         VStack(spacing: 14) {
             ZStack {
@@ -368,7 +378,7 @@ extension Notification.Name {
     static let goalChanged = Notification.Name("goalChanged")
 }
 
-// MARK: - ✅ Streak Section View
+// MARK: - Streak Section View
 private struct StreakSectionView: View {
     let streak: Int
     let freezeUsed: Int

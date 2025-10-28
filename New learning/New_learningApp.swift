@@ -6,12 +6,15 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct New_learningApp: App {
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
+        var body: some Scene {
+            WindowGroup {
+                RootView()
+                    .environmentObject(GoalManager.shared)
+                    .modelContainer(for: GoalModel.self)
+            }
         }
     }
-}

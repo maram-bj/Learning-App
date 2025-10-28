@@ -14,7 +14,7 @@ struct CalendarView: View {
     var body: some View {
         VStack(spacing: 12) {
 
-            // MARK: - Header
+            // MARK:  Header
             HStack {
                 HStack(spacing: 4) {
                     Text(viewModel.currentMonthYear)
@@ -43,7 +43,7 @@ struct CalendarView: View {
             .padding(.horizontal)
             .padding(.top, 6)
 
-            // MARK: - Days
+            // MARK:  Days
             if !viewModel.daysOfWeek.isEmpty {
                 HStack(spacing: 6) {
                     ForEach(viewModel.daysOfWeek) { day in

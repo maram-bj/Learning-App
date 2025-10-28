@@ -5,6 +5,7 @@
 //  Created by Maram on 02/05/1447 AH.
 //
 import Foundation
+// Lightweight view model for a calendar day (name and number only)
 
 struct Day: Identifiable, Equatable {
     let id = UUID()

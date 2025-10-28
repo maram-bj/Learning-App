@@ -17,20 +17,20 @@ public struct OnboardingView: View {
         NavigationStack {
             VStack(alignment: .leading, spacing: 32) {
                 
-                // MARK: - Header Image
+                // MARK: Image
                 HStack {
                     getImage()
                 }
                 .frame(maxWidth: .infinity)
                 .padding(.top, 42)
                 
-                // MARK: - Text Section
+                // MARK: Text
                 VStack(alignment: .leading, spacing: 8) {
                     textBoldWhite(title: "Hello Learner", size: 34)
                     textregularGray2(title: "This app will help you learn everyday!", size: 17)
                 }
                 
-                // MARK: - Skill Input
+                // MARK: Skill Input
                 VStack(alignment: .leading, spacing: 4) {
                     textregularWhite(title: "I want to learn", size: 22)
                     
@@ -47,7 +47,7 @@ public struct OnboardingView: View {
                         .background(Color.gray.opacity(0.5))
                 }
                 
-                // MARK: - Duration Picker
+                // MARK:  Duration
                 VStack(alignment: .leading, spacing: 12) {
                     textregularWhite(title: "I want to learn it in a", size: 22)
                     HStack(spacing: 8) {
@@ -59,7 +59,7 @@ public struct OnboardingView: View {
                 
                 Spacer()
                 
-                // MARK: - Start Learning Button
+                // MARK: Start Learning Button
                 HStack {
                     startbutton(
                         color: viewModel.isStartLearningButtonEnabled ? Color("Color") : Color.white.opacity(0.2),
