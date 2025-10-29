@@ -10,7 +10,7 @@ You can log the days you’ve learned, freeze days when you need a break, and vi
 -Freeze days to keep your streak alive during breaks
 -Interactive calendar to view learned and frozen days
 
- ## Tech Stack �
+ ## Tech Stack 
  - MVVM is The architectural pattern
 - SwiftData used to local storage for goals and progress
 
